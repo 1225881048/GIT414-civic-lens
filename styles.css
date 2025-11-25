@@ -1,10 +1,62 @@
-/* CSS by ///ADD/// YOUR NAME */
+/* CSS by Bronte Fyke */
 
 /* Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wdth,wght@0,18..144,87..112,300..900;1,18..144,87..112,300..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 
-/* ///ADD/// CSS Reset */
+          /* ///ADD/// CSS Reset */
+/* universal box sizing */
+html {
+  box-sizing: border-box;
+  font-size: 100%; /* Set consistent base font size */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
 
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/* remove default list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* make images and embeds responsive */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* improve text rendering */
+body {
+  line-height: 1.5;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  background-color: #fff;
+  color: #111;
+}
+
+/* remove link underlines, restore on hover/focus */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
+/* set form element styles to inherit fonts */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* consistent table layout */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 /* Root Variables */
 :root {
@@ -38,14 +90,238 @@ body.dark-mode {
   cursor: pointer;
 }
 
-/* ///ADD/// Skip Link Styles */
+@media (prefers-color-scheme: dark) {
+    body{
+        background-color: #424242;
+    }
+}
+
+          /* ///ADD/// Skip Link Styles */
+#skip{
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+#skip:focus{
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
 
 /* ///ADD/// Navigation Styles */
+.header {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.header p {
+  padding-bottom: 0.5rem;
+}
+
+.skip-to-content-link {
+  position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.skip-to-content-link:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  background-color: var(--watchdog-white);
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-button {
+  width: 92%;
+  height: 3rem;
+  border: none;
+  background: var(--news-flash);
+  color: #fff;
+  display: inline-grid;
+  place-items: center;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: none;
+  background: var(--blue-bulletin);
+  width: 92%;
+}
+
+#menu-toggle:checked + .menu-button + .menu {
+  display: block;
+}
+
+.menu li a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid var(--story-subtitle);
+  width: 100%;
+}
 
 /* ///ADD/// Global Layout Styles */
 
-/* ///ADD/// Global Text Styles */
+h1, h2, h3, p, .tagline, video, form, #social {
+  padding: 0 4%;
+}
 
+h2 {
+  padding-top: 2rem;
+}
+
+.news-card {
+  background-color: var(--news-flash);
+  margin: 10px 6%;
+  padding: 4% 0px;
+  box-shadow: var(--shadow);
+}
+
+.news-card h3 {
+  position: relative;
+  padding: 0 4% 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.news-card h3::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 0;
+  height: 0.5px;
+  background: var(--watchdog-white);
+}
+
+.featured-card {
+  margin: 10px 6%;
+  padding: 4% 0px;
+  border: 0.5px solid var(--story-subtitle);
+  box-shadow: var(--shadow);
+}
+
+.featured-card h3 {
+  position: relative;
+  padding: 0 4% 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.featured-card h3::after {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  bottom: 0;
+  height: 0.5px;
+  background: var(--story-subtitle);
+}
+
+form {
+  background-color: var(--news-flash);
+  margin: 10px 6%;
+  padding: 4% 4%;
+  box-shadow: var(--shadow);
+}
+
+form > label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.75rem 4% 0.25rem;
+  color: var(--watchdog-white);
+}
+
+form input,
+form select {
+  display: block;
+  width: 92%;
+  margin-bottom: 20px;
+  padding: 0.5rem;
+  border-radius: 2px;
+  border: 1px solid var(--blue-bulletin);
+}
+
+form button {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  box-shadow: var(--shadow);
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+fieldset {
+  border: 1.5px solid var(--blue-bulletin);
+  border-radius: 2px;
+  padding: 1rem 1rem 0 1rem;
+  margin-bottom: 1rem;;
+  color: var(--watchdog-white);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 0.5rem;
+}
+
+fieldset legend {
+  text-transform: uppercase;
+}
+
+fieldset input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 2px;
+  border: 2px solid var(--watchdog-white);
+  display: inline-block;
+}
+
+fieldset label {
+  display: inline-block;
+}
+
+fieldset input[type="checkbox"] + label::after {
+  content: "";
+  display: block;
+}
+
+
+
+
+
+
+
+
+/* ///ADD/// Global Text Styles */
+h1, h2, h3, blockquote{
+  font-family: var(--font-heading);
+}
+
+blockquote {
+  display:block;
+  text-align: center;
+  margin: 20px 0;
+  padding
+}
+
+p {
+  font-family: var(--font-body);
+}
 
 /* ///ADD/// medium styles 620px */
 
