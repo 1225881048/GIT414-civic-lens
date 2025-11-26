@@ -114,7 +114,7 @@ body.dark-mode {
 }
 
 /* ///ADD/// Navigation Styles */
-.header {
+header {
   background-color: var(--blue-bulletin);
   color: var(--watchdog-white);
   padding-top: 1rem;
@@ -122,8 +122,8 @@ body.dark-mode {
   margin-bottom: 1rem;
 }
 
-.header p {
-  padding-bottom: 0.5rem;
+header p {
+  margin-bottom: 0.5rem;
 }
 
 .skip-to-content-link {
@@ -181,7 +181,7 @@ nav {
 
 /* ///ADD/// Global Layout Styles */
 
-h1, h2, h3, p, .tagline, video, form, #social {
+h1, h2, h3, p, small, .tagline, video, form, #social {
   padding: 0 4%;
 }
 
@@ -252,7 +252,7 @@ form > label {
 form input,
 form select {
   display: block;
-  width: 92%;
+  width: 100%;
   margin-bottom: 20px;
   padding: 0.5rem;
   border-radius: 2px;
@@ -266,6 +266,9 @@ form button {
   text-transform: uppercase;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  width: 100%;
+  display: block;
+  margin-bottom: 1.1rem;
 }
 
 fieldset {
@@ -277,10 +280,6 @@ fieldset {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 0.5rem;
-}
-
-fieldset legend {
-  text-transform: uppercase;
 }
 
 fieldset input[type="checkbox"] {
@@ -300,8 +299,18 @@ fieldset input[type="checkbox"] + label::after {
   display: block;
 }
 
+footer {
+  background-color: var(--blue-bulletin);
+  color: var(--watchdog-white);
+  margin-top: 2rem;
+}
 
-
+small {
+  display: block;
+  text-align: center;
+  font-weight: 300;
+  padding: 1rem 0rem;
+}
 
 
 
@@ -312,8 +321,12 @@ h1, h2, h3, blockquote{
   font-family: var(--font-heading);
 }
 
+h1, h2, h3 {
+  font-weight: 300;
+}
+
 blockquote {
-  display:block;
+  display: block;
   text-align: center;
   margin: 20px 0;
   padding
@@ -321,6 +334,24 @@ blockquote {
 
 p {
   font-family: var(--font-body);
+}
+
+.news-card {
+  color: var(--watchdog-white);
+}
+
+fieldset legend {
+  text-transform: uppercase;
+}
+
+#social li {
+  display: inline-flex;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
+  padding: 0.5rem;
+  background-color: var(--news-flash);
+  box-shadow: var(--shadow);
+  text-transform: uppercase;
 }
 
 /* ///ADD/// medium styles 620px */
@@ -333,7 +364,25 @@ p {
 
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
+/* Default: follow system preference */
+@media (prefers-color-scheme: dark) {
+  body:not(.light-mode) {
+    background-color: var(--truth-text);
+    color: var(--watchdog-white);
+  }
+}
 
+/* Manual user override: force light mode */
+body.light-mode {
+  background-color: var(--watchdog-white);
+  color: var(--truth-text);
+}
+
+/* Manual user override: force dark mode */
+body.dark-mode {
+  background-color: var(--truth-text);
+  color: var(--watchdog-white);
+}
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
