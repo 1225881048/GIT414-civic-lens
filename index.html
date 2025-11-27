@@ -52,7 +52,7 @@
         <blockquote class="tagline">“We don't follow the narrative. We follow the facts.”</blockquote>
       </section>
 
-      <section>
+      <section class="breaking-news-section">
         <h2 id="breaking-news">Breaking News</h2>
 
         <article class="news-card">
@@ -76,7 +76,7 @@
         </article>
       </section>
 
-      <section>
+      <section class="featured-articles-section">
         <h2 id="featured-articles">Featured Articles</h2>
 
         <article class="featured-card">
@@ -170,35 +170,45 @@
       <p>Receive text messages with the news you want to know.</p>
 
       <form action="https://wp.zybooks.com/form-viewer.php" method="post">
-        <label for="name">Name</label>
+        <label for="name" id="namelabel">Name</label>
         <input type="text" id="name" name="name" required>
 
-        <label for="mobile">Mobile</label>
+        <label for="mobile" id="mobilelabel">Mobile</label>
         <input type="tel" id="mobile" name="mobile" required>
 
-        <fieldset>
+        <fieldset id="preferences">
           <legend>Notification Preferences</legend>
           
-          <input type="checkbox" id="breaking-news" name="breaking-news">
-          <label for="breaking-news">Breaking News Alerts</label>
-
-          <input type="checkbox" id="politics" name="politics">
-          <label for="politics">Politics</label>
-
-          <input type="checkbox" id="weather" name="weather">
-          <label for="weather">Weather</label>
-
-          <input type="checkbox" id="sports" name="sports">
-          <label for="sports">Sports</label>
-
-          <input type="checkbox" id="entertainment" name="entertainment">
-          <label for="entertainment">Entertainment</label>
-
-          <input type="checkbox" id="world" name="world">
-          <label for="world">World</label>
-
-          <input type="checkbox" id="financial" name="financial">
-          <label for="financial">Financial</label>
+          <div>
+            <div id="checkbox1">
+              <input type="checkbox" id="breaking-news" name="breaking-news">
+              <label for="breaking-news">Breaking News Alerts</label>
+            </div>
+            <div id="checkbox2">
+              <input type="checkbox" id="politics" name="politics">
+              <label for="politics">Politics</label>
+            </div>
+            <div id="checkbox3">
+              <input type="checkbox" id="weather" name="weather">
+              <label for="weather">Weather</label>
+            </div>
+            <div id="checkbox4">
+              <input type="checkbox" id="sports" name="sports">
+              <label for="sports">Sports</label>
+              </div>
+            <div id="checkbox5">
+              <input type="checkbox" id="entertainment" name="entertainment">
+              <label for="entertainment">Entertainment</label>
+            </div>
+            <div id="checkbox6">
+              <input type="checkbox" id="world" name="world">
+              <label for="world">World</label>
+            </div>
+            <div id="checkbox7">
+              <input type="checkbox" id="financial" name="financial">
+              <label for="financial">Financial</label>
+            </div>
+          </div>
         </fieldset>
 
         <button type="submit" id="formsubmit">Subscribe</button>
