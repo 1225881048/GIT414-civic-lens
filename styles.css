@@ -497,43 +497,53 @@ fieldset legend {
     column-gap: 2rem;
   }
 
-  fieldset > div {
-    display: grid;
-    grid-template-columns: repeat(2, 100%);
-    justify-items: stretch;
+  #checkboxes {
+    display: flex;
+    flex-wrap: wrap;
   }  
 
+  #checkboxes > div {
+    flex: 1 1 50%;
+  }
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ///ADD/// large styles 920px */
+@media only screen and (min-width: 920px) {
+/*articles*/
+  .featured-articles-section {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  form {
+    column-gap: 0.3rem;
+  }
+
+  #checkboxes > div {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+  }
+}
 
 
 /* ///ADD/// x-large styles 1024px */
+@media only screen and (min-width: 1024px) {
+
+  main,
+  #alerts {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  header > *,
+  footer > * {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
 
 
 /* ///ADD/// Interaction Queries for color scheme light and dark and motion preference */
@@ -559,5 +569,7 @@ body.dark-mode {
 
 /* ///ADD///  Feature Query for :has() that checks if the #menu-toggle is checked */
 @supports (selector(:has(*))) {
-
+  nav:has(#menu-toggle:checked) {
+    outline: 2px dashed var(--news-flash);
+  }
 }
